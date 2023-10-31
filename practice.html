@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+</head>
+<body>
+    
+
+<h1 onclick="console.log('Hello')">This is new line</h1>
+
+<button onclick="document.body.style.backgroundColor='red'">make red</button>
+
+<button onclick="makeBlueButton()">make blue</button>
+
+<button id="make-pink">make pink</button>
+
+<button id="make-yellow">make yellow</button>
+
+<button id="make-lightgray">make lightgray</button>
+
+<button id="make-purple">make purple</button>
+
+<button id="make-tomato">make tomato</button>
+
+<section>
+    <h1 id="text">Default text</h1>
+    <button onclick="makeChange()">click me</button>
+    <button onclick="makeChange2()">click me</button>
+</section>
+
+<section>
+    <h1 id="make-change">Default text</h1>
+    <input type="text"  id="updateText">
+    <button id="updateButton">update</button>
+</section>
+
+<div id="div">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium deleniti ratione veritatis, recusandae ipsam alias voluptate, corrupti, magni a quam magnam nisi? Corporis minima officia, soluta labore possimus sint nobis enim sed quae at atque laudantium culpa maxime maiores rerum laborum dignissimos exercitationem optio natus, est accusantium.</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium deleniti ratione veritatis, recusandae ipsam alias voluptate, corrupti, magni a quam magnam nisi? Corporis minima officia, soluta labore possimus sint nobis enim sed quae at atque laudantium culpa maxime maiores rerum laborum dignissimos exercitationem optio natus, est accusantium.</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium deleniti ratione veritatis, recusandae ipsam alias voluptate, corrupti, magni a quam magnam nisi? Corporis minima officia, soluta labore possimus sint nobis enim sed quae at atque laudantium culpa maxime maiores rerum laborum dignissimos exercitationem optio natus, est accusantium.</p>
+    <textarea name="" id="new-comment" cols="50" rows="5"></textarea>
+    <br>
+    <button id="btn-post">post</button>
+</div>
+
+    <script src="js/practice.js"></script>
+    <script>
+        // step-1
+        document.getElementById('btn-post').addEventListener('click',function(){
+            // step-2
+            const newComment=document.getElementById('new-comment');
+            const textArea=newComment.value;
+            // step-3
+            const addIntoDiv=document.getElementById('div');
+            // step-4
+            const p=document.createElement('p');
+            p.innerText=textArea;
+            addIntoDiv.appendChild(p);
+            // step-5
+            newComment.value="";
+
+        })
+    </script>
+</body>
+</html>

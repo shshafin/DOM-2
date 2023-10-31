@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <h1 onclick="console.log('click me');">Dom er events</h1>
+    <button onclick="console.log(7);">Click me</button>
+
+    <!-- option-1 -->
+    <button onclick="document.body.style.backgroundColor='purple'">make purple</button>
+    <!-- option-1 -->
+
+    <!-- option-2 -->
+    <button onclick="makeBlue()">make blue</button>
+    <!-- option-2 -->
+
+    <!-- option-3 -->
+    <button id="make-orange">make orange</button>
+    <!-- option-3 -->
+
+    <!-- option-4 -->
+    <button id="make-gray">make gray</button>
+    <!-- option-4 -->
+
+    <!-- option-5 -->
+    <button id="make-pink">make pink</button>
+    <!-- option-5 -->
+
+    <!-- option-6 -->
+    <button id="make-black">make black</button>
+    <!-- option-6 -->
+
+    <!-- option-7 -->
+    <button id="make-golden">make golden</button>
+    <!-- option-7 -->
+
+    <!-- main system-1 -->
+    <h1 id="handler-status">Default Text</h1>
+    <button onclick="handlerChanging()">Click me fast</button>
+    <!-- main system-2 -->
+    <button id="c">Click on it</button>
+   
+
+
+    <!-- another -->
+    <h2 id="heading-status">who knows?</h2>
+    <input type="text"  id="input-field" placeholder="write on it">
+    <button id="button-update">update</button>
+
+    <!-- comment -->
+    <div id="div">
+    <h1>DOM means document object model</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad explicabo dicta maxime corporis, eius praesentium? Voluptates cupiditate repudiandae totam voluptatum dolore assumenda soluta natus. A laborum, autem doloremque impedit nesciunt asperiores doloribus odit magnam quis, earum perferendis eum officiis minima. Quas totam sed commodi vitae dolor expedita quis nobis laborum.</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad explicabo dicta maxime corporis, eius praesentium? Voluptates cupiditate repudiandae totam voluptatum dolore assumenda soluta natus. A laborum, autem doloremque impedit nesciunt asperiores doloribus odit magnam quis, earum perferendis eum officiis minima. Quas totam sed commodi vitae dolor expedita quis nobis laborum.</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad explicabo dicta maxime corporis, eius praesentium? Voluptates cupiditate repudiandae totam voluptatum dolore assumenda soluta natus. A laborum, autem doloremque impedit nesciunt asperiores doloribus odit magnam quis, earum perferendis eum officiis minima. Quas totam sed commodi vitae dolor expedita quis nobis laborum.</p>
+
+    
+
+    <textarea name="" id="new-comment" cols="30" rows="5"></textarea>
+    <br>
+    <button id="btn-post">post</button>
+</div>
+
+
+
+    <script src="js/events.js"></script>
+    <script>
+        // system-1
+        function handlerChanging() {
+            const change=document.getElementById('handler-status');
+            change.innerText='wow! it is change';
+        }
+
+        // system-2
+        document.getElementById('c').addEventListener('click',function changingText() {
+            document.getElementById('handler-status').innerText='nice it change';
+        })
+
+        // another
+        document.getElementById('button-update').addEventListener('click',function changing() {
+            const getInput=document.getElementById('input-field');
+            const setInput=getInput.value; //value = called the text
+
+            const updatedText=document.getElementById('heading-status');
+            updatedText.innerText=setInput;
+            getInput.value=''; // empty string means clear texts
+        })
+
+        // comment
+        document.getElementById('btn-post').addEventListener('click',function () {
+            // step-1:
+            const newComment=document.getElementById('new-comment');
+            const valueSet=newComment.value;
+            // step-2:
+            const addIntoDiv=document.getElementById('div');
+            // step-3:
+            const p=document.createElement('p');
+            p.innerText=valueSet;
+            addIntoDiv.appendChild(p);
+            newComment.value='';        
+            })
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello world</h1>
+    <button id="btn-click">click me</button>
+    <input type="text" name="" id="text">
+
+    <script>
+        // click
+        // document.getElementById('btn-click').addEventListener('click',function(){
+        //     console.log('click');
+        // })
+
+        // mouseenter
+        // document.getElementById('btn-click').addEventListener('mouseenter',function(){
+        //     console.log('mouseenter');
+        // })
+
+    // mousemove
+    // document.getElementById('btn-click').addEventListener('mousemove',function(){
+    //         console.log('mousemove');
+    //     })
+
+    // focus
+    // document.getElementById('text').addEventListener('focus',function(){
+    //         console.log('focus');
+    //     })
+
+    // blur
+    // document.getElementById('text').addEventListener('blur',function(){
+    //         console.log('blur');
+    //     })
+
+    // keydown
+    // document.getElementById('text').addEventListener('keydown',function(event){
+    //         console.log(event.target.value);
+    //     })
+
+    // keypress
+    // document.getElementById('text').addEventListener('keypress',function(event){
+    //         console.log(event.target.value);
+    //     })
+    
+    // keyup
+    document.getElementById('text').addEventListener('keyup',function(event){
+            console.log(event.target.value);
+        })
+    </script>
+</body>
+</html>
